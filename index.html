@@ -60,6 +60,56 @@
 	<link rel="stylesheet" id="theme-switch" href="css/style.css">
 	<!-- End demo purposes only -->
 
+    <script type="text/javascript">
+    function cc(obj){
+    	var objdisplay = document.getElementById(obj).style.display;
+		if(objdisplay =="none"){
+		document.getElementById(obj).style.display ="";
+		document.getElementById("cx").innerHTML="查看全文>>";
+		document.getElementById("cx").innerHTML="折叠起来>>";
+		} 
+		else{
+		document.getElementById(obj).style.display ="none";
+		document.getElementById("cx").innerHTML="折叠起来>>";
+		document.getElementById("cx").innerHTML="查看全文>>";
+		}
+	}
+    // 显示函数
+    function nextnode(node){
+        if(node.nodeType == 1){ //判断是否是元素节点,排除空的文本节点
+            return node;
+        }
+        if(node.nextSibling){
+            return nextnode(node.nextSibling);
+        }
+    }
+    function prevnode(node){    //新增加函数
+        if(node.nodeType == 1){ //判断是否是元素节点,排除空的文本节点
+            return node;
+        }
+        if(node.previousSibling){
+            return prevnode(node.previousSibling);
+        }
+    }
+    function showdiv(obj) {
+    	var x=obj.parentNode;
+    	var y=nextnode(x.nextSibling);
+        
+        x.style.display="none";
+        y.style.display="block";
+    }
+    // 隐藏函数
+    function hidediv(obj) {
+    	var x=obj.parentNode.parentNode;
+        var y=prevnode(x.previousSibling);//摘要
+        console.log(x)
+        console.log(y)
+        
+        x.style.display="none";
+        y.style.display="block";
+    }
+    
+    </script>
 
 	<style>
 	/* For demo purpose only */
@@ -213,7 +263,7 @@
 			    			<div class="fh5co-owl-text-wrap">
 						    	<div class="fh5co-owl-text">
 						    		<h1 class="fh5co-lead to-animate">经验科学</h1>
-									<h2 class="fh5co-sub-lead to-animate">掌纹辅助诊断是通过前人反复细致的观察与验证，逐步探索出掌纹与人体健康关系的一些规律。掌纹看诊属皮纹学，皮纹学是现代医学遗传学的分支，在临床医学中成为医生辨别多种疾病的重要辅助诊断手段之一。</h2>
+									<h2 class="fh5co-sub-lead to-animate">掌纹辅助诊断是皮纹学的应用之一。通过前人反复细致的观察与验证，逐步探索出掌纹与人体健康关系的一些规律。在现代临床医学中成为医生辨别多种疾病的重要辅助诊断手段之一。</h2>
 									<p class="to-animate-2"><a href="#" data-nav-section="ideas" class="btn btn-primary btn-lg">查看详情</a></p>
 						    	</div>
 						    </div>
@@ -233,7 +283,7 @@
 			    			<div class="fh5co-owl-text-wrap">
 						    	<div class="fh5co-owl-text">
 						    		<h1 class="fh5co-lead to-animate">神经网络</h1>
-									<h2 class="fh5co-sub-lead to-animate" style="font-size=18px">运用神经网络实现掌纹健康建议系统， 可以在一定程度上解决传统的符号知识处理方法中存 在的知识获取的瓶颈、学习能力差、知识库管理等困难.由于它所使用的专家知识是从样本学习中获取的.因此在一定程度上也克服了一般医学专家知识不 完备的缺陷，从而提高了系统的可靠性和准确性。</h2>
+									<h2 class="fh5co-sub-lead to-animate" style="font-size=18px">运用神经网络实现掌纹健康建议系统，可以在一定程度上解决传统的符号知识处理方法中存 在的知识获取的瓶颈、学习能力差、知识库管理等困难。由于它所使用的专家知识是从样本学习中获取的。因此在一定程度上也克服了一般医学专家知识不完备的缺陷，从而提高了系统的可靠性和准确性。</h2>
 									<p class="to-animate-2"><a href="#"data-nav-section="programming" class="btn btn-primary btn-lg">查看详情</a></p>
 						    	</div>
 						    </div>
@@ -280,14 +330,23 @@
 					<img src="images/img_1.jpg" class="img-responsive img-rounded" alt="Free HTML5 Template">
 				</div>
 				<div class="col-md-4 to-animate">
-					<h2>问题发现</h2>
-					<p>一般病人走进医院时，最先想的是：我的病该挂哪个科？对于我们身上的潜在病痛，我们很难把握要去咨询哪一方面的医生。随着这一问题的发展，现今出现了不少在线医疗协助的应用，但是我们也面临着“如何清楚的表达自己的病痛”的难题。</p>
-					<p>为了不让大家“病痛说不清，看医择医难”，我们开始考虑运用生物特征技术(Biometrics)对应病理知识，为大家提供合适的医疗建议。譬如虹膜，舌纹，眼睑等都是生物特征。权衡普适性，设备造价，科学性等因素后，我们最终选定掌纹的病理特征作为本系统的建议依据。</p>
-					<p><a href="#" class="btn btn-primary">点击查看更多</a></p>
+					<h3><a name="there1"></a>问题发现</h3>
+					<p>在我们自己感觉身体不适时，向在线医生描述具体的身体状况成了一个难题；当我们走进医院时，也会为“我的病痛该挂哪个科？“而困扰；当家庭医生来访时，他能够简单地观测我们的生理状况，但是会不会忽视我们身体中潜在的慢性疾病呢？</p>
+					<p>中医学以整体观为核心，“内之应，皆有表里，其皆然也“，当人体身体状况发生变化，在某些情况下会反应掌纹之中。同样的在西方皮纹学的研究发展中，越来越多的证据表明，皮纹的形式与某些主要的遗传基因及机体某些紊乱有着密切联系。现代解剖学已向人们揭示：在人体大脑皮质所占区域比例最大的是人体的手掌知觉神经和运动神经。手掌与大脑联系密切，因而，内脏发生某种异常变化时，这种信息能较快的反应在手掌</p>
+					<p>那么以掌纹为判定疾病的辅助手段到底科不科学呢？   <a class="btn" rel="external nofollow" onclick="javascript:cc('a1');return false;">显示详情</a></p>
 				</div>
 			</div>
-		</div>
+			<div class="row" id="team">
+				<div class="col-md-8 to-animate" id="a1" style="display: none;">
+					<h3>以统计的方法</h3>
+					<a class="btn" rel="external nofollow" onclick="javascript:cc('a1');return false;">收起全文</a></p>
+					
+				</div>
+					
+			</div>
+		</div>	
 	</div>
+  
 	<div id="fh5co-our-services" data-section="programming">
 		<div class="container">
 			<div class="row row-bottom-padded-sm">
@@ -305,36 +364,36 @@
 					<div class="box to-animate">
 						<div class="icon colored-1"><span><i class="icon-mustache"></i></span></div>
 						<h3>专家知识库</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+						<p>	采用mysql数据库存取掌纹信息和疾病标注，录入王晨霞，赵理明等老师的文献资料。作为神经网络训练的样本。</p>
 					</div>
 					<div class="box to-animate">
 						<div class="icon colored-4"><span><i class="icon-heart"></i></span></div>
 						<h3>UI设计</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p>简介明了，大图标设计，方便各个年龄阶段的人检测自己潜在的慢性疾病或遗传疾病</p>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="box to-animate">
 						<div class="icon colored-2"><span><i class="icon-screen-desktop"></i></span></div>
 						<h3>神经网络</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p>额这个要用什么神经网络啊</p>
 					</div>
 					<div class="box to-animate">
 						<div class="icon colored-5"><span><i class="icon-rocket"></i></span></div>
-						<h3>易推广小程序</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+						<h3>易推广——微信小程序</h3>
+						<p>更快传播，更方便使用</p>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="box to-animate">
 						<div class="icon colored-3"><span><i class="icon-eye"></i></span></div>
-						<h3>云计算支持</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+						<h3>总体架构设计/h3>
+						<p>在云上</p>
 					</div>
 					<div class="box to-animate">
 						<div class="icon colored-6"><span><i class="icon-user"></i></span></div>
 						<h3>开源</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p>Open Source 我们能做的还有很多</p>
 					</div>
 				</div>
 			</div>
