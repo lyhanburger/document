@@ -227,7 +227,7 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body style="height:100%; margin:0">
 	<header role="banner" id="fh5co-header">
 			<div class="container">
 				<!-- <div class="row"> -->
@@ -333,13 +333,95 @@
 					<h3><a name="there1"></a>问题发现</h3>
 					<p>在我们自己感觉身体不适时，向在线医生描述具体的身体状况成了一个难题；当我们走进医院时，也会为“我的病痛该挂哪个科？“而困扰；当家庭医生来访时，他能够简单地观测我们的生理状况，但是会不会忽视我们身体中潜在的慢性疾病呢？</p>
 					<p>中医学以整体观为核心，“内之应，皆有表里，其皆然也“，当人体身体状况发生变化，在某些情况下会反应掌纹之中。同样的在西方皮纹学的研究发展中，越来越多的证据表明，皮纹的形式与某些主要的遗传基因及机体某些紊乱有着密切联系。现代解剖学已向人们揭示：在人体大脑皮质所占区域比例最大的是人体的手掌知觉神经和运动神经。手掌与大脑联系密切，因而，内脏发生某种异常变化时，这种信息能较快的反应在手掌</p>
-					<p>那么以掌纹为判定疾病的辅助手段到底科不科学呢？   <a class="btn" rel="external nofollow" onclick="javascript:cc('a1');return false;">显示详情</a></p>
+					<p>那么以掌纹为判定疾病的辅助手段到底科不科学呢？   <a class="btn" rel="external nofollow" onclick="javascript:cc('team');return false;">显示详情</a></p>
 				</div>
 			</div>
-			<div class="row" id="team">
-				<div class="col-md-8 to-animate" id="a1" style="display: none;">
-					<h3>以统计的方法</h3>
-					<a class="btn" rel="external nofollow" onclick="javascript:cc('a1');return false;">收起全文</a></p>
+			<div class="row" id="team" style="display: None">
+				<div id="a1" style="height:400px;">
+					<h2 class="to-animate text-center">理论依据</h2>
+					<div class="to-animate" id="pic" style="height: 100%"> </div>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+					       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+					       <script type="text/javascript">
+					var dom = document.getElementById("pic");
+					var myChart = echarts.init(dom);
+					var app = {};
+					option = null;
+					app.title = '正负条形图';
+
+					option = {
+					    tooltip : {
+					        trigger: 'axis',
+					        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+					            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					        }
+					    },
+					    legend: {
+					        data:['正常', '患病']
+					    },
+					    grid: {
+					        left: '3%',
+					        right: '4%',
+					        bottom: '3%',
+					        containLabel: true
+					    },
+					    xAxis : [
+					        {
+					            type : 'value'
+					        }
+					    ],
+					    yAxis : [
+					        {
+					            type : 'category',
+					            axisTick : {show: false},
+					            data : ['170例食道癌女性患者\n\nI4花纹异常',
+					                    '先天性唇愕裂患者\n\n悉尼手',
+					                    '智力低下儿童\n\nATD角度大于41',
+					                    '食管责门癌患\n\n鱼际花纹',
+					                    '800例精神分裂\n\n皱纹掌',
+					                    '129例冠心病\n\nATD角度大于41']
+					        }
+					    ],
+					    series : [
+					        {
+					            name:'正常',
+					            type:'bar',
+					            label: {
+					                normal: {
+					                    show: true,
+					                    position: 'inside'
+					                }
+					            },
+					            data:[65.8, 1.0, 13.95, 35.9, 10, 10.08]
+					        },
+					        {
+					            name:'患病',
+					            type:'bar',
+					            stack: '总量',
+					            label: {
+					                normal: {
+					                    show: true
+					                }
+					            },
+					            data:[80.5, 7.3, 55.81, 35.9, 35.5, 22.48]
+					        },
+					      
+					    ]
+					};
+					;
+					if (option && typeof option === "object") {
+					    myChart.setOption(option, true);
+					}
+					       </script>
+
+					<p><a class="btn" rel="external nofollow" onclick="javascript:cc('a1');return false;">收起全文</a></p>
 					
 				</div>
 					
