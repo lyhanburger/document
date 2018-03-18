@@ -75,42 +75,7 @@
 		document.getElementById("cx").innerHTML="查看全文>>";
 		}
 	}
-	// toggle
-    // 显示函数
-    function nextnode(node){
-        if(node.nodeType == 1){ //判断是否是元素节点,排除空的文本节点
-            return node;
-        }
-        if(node.nextSibling){
-            return nextnode(node.nextSibling);
-        }
-    }
-    function prevnode(node){    //新增加函数
-        if(node.nodeType == 1){ //判断是否是元素节点,排除空的文本节点
-            return node;
-        }
-        if(node.previousSibling){
-            return prevnode(node.previousSibling);
-        }
-    }
-    function showdiv(obj) {
-    	var x=obj.parentNode;
-    	var y=nextnode(x.nextSibling);
-        
-        x.style.display="none";
-        y.style.display="block";
-    }
-    // 隐藏函数
-    function hidediv(obj) {
-    	var x=obj.parentNode.parentNode;
-        var y=prevnode(x.previousSibling);//摘要
-        console.log(x)
-        console.log(y)
-        
-        x.style.display="none";
-        y.style.display="block";
-    }
-    
+	
     </script>
 
 	<style>
