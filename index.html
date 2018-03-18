@@ -64,9 +64,10 @@
     function cc(obj){
     	var objdisplay = document.getElementById(obj).style.display;
 		if(objdisplay =="none"){
-		document.getElementById(obj).style.display ="";
+		document.getElementById(obj).style.display ="block";
 		document.getElementById("cx").innerHTML="查看全文>>";
 		document.getElementById("cx").innerHTML="折叠起来>>";
+		return;
 		} 
 		else{
 		document.getElementById(obj).style.display ="none";
@@ -74,6 +75,7 @@
 		document.getElementById("cx").innerHTML="查看全文>>";
 		}
 	}
+	// toggle
     // 显示函数
     function nextnode(node){
         if(node.nodeType == 1){ //判断是否是元素节点,排除空的文本节点
@@ -320,26 +322,29 @@
 			<div class="row row-bottom-padded-lg" id="about-us">
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="to-animate">想法来源</h2>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 to-animate">
-							<h3></h3>
-						</div>
-					</div>
+					<div class="row"></div>
+					<div class="col-md-12 text-center to-animate " style="color: #666; width: 52%; left: 24%;">
+					<p >在我们自己感觉身体不适时，向在线医生描述具体的身体状况成了一个难题;当我们走进医院时，也会为“我的病痛该挂哪个科？“而困扰;当家庭医生来访时，他能够简单地观测我们的生理状况，但是我们也会担心身体中潜在的疾病</p>
 				</div>
+				</div>
+				
 				<div class="col-md-8 to-animate">
 					<img src="images/img_1.jpg" class="img-responsive img-rounded" alt="Free HTML5 Template">
 				</div>
-				<div class="col-md-4 to-animate">
-					<h3><a name="there1"></a>问题发现</h3>
-					<p>在我们自己感觉身体不适时，向在线医生描述具体的身体状况成了一个难题；当我们走进医院时，也会为“我的病痛该挂哪个科？“而困扰；当家庭医生来访时，他能够简单地观测我们的生理状况，但是会不会忽视我们身体中潜在的慢性疾病呢？</p>
-					<p>中医学以整体观为核心，“内之应，皆有表里，其皆然也“，当人体身体状况发生变化，在某些情况下会反应掌纹之中。同样的在西方皮纹学的研究发展中，越来越多的证据表明，皮纹的形式与某些主要的遗传基因及机体某些紊乱有着密切联系。现代解剖学已向人们揭示：在人体大脑皮质所占区域比例最大的是人体的手掌知觉神经和运动神经。手掌与大脑联系密切，因而，内脏发生某种异常变化时，这种信息能较快的反应在手掌</p>
-					<p>那么以掌纹为判定疾病的辅助手段到底科不科学呢？   <a class="btn" rel="external nofollow" onclick="javascript:cc('team');return false;">显示详情</a></p>
+				<div class="col-md-4">
+						<h2 class="to-animate text-center">理论依据</h2>
+						<p>中医学以整体观为核心，“内之应，皆有表里，其皆然也“，当人体身体状况发生变化，在某些情况下会反应掌纹之中。同样的在西方皮纹学的研究发展中，越来越多的证据表明，皮纹的形式与某些主要的遗传基因及机体某些紊乱有着密切联系。现代解剖学已向人们揭示：在人体大脑皮质所占区域比例最大的是人体的手掌知觉神经和运动神经。手掌与大脑联系密切，因而，内脏发生某种异常变化时，这种信息能较快的反应在手掌。</p>
+						<p>据文献记载，我国在秦汉时期就已经指纹用于鉴定，在唐宋时代指纹和掌纹已经广泛应用于婚约休书、狱词供状、借贷契约、买卖文凭、军队名籍等方面。因此， 世界著名皮纹史学家 Heindl 指出:“中国是世界上应用指纹的发源地”。英国皮 纹学家 Penrose 亦说:“早期的皮纹样本能从中国古代公文中找到”。但真正把皮纹学系统化、科学化的是欧洲国家。17世纪，随着自然科学的发展，尤其是人体解剖学、组织学和生理学的出现为皮纹 学的发展奠定了科学的理论基础，开启了近、现代皮纹学时代。
+						</p>
+					</div>
+				<div class="row">
+				<div class=" col-md-12 to-animate" id="team">
+					<p>皮纹学在医学疾病诊断中具有重要指导意义，国内外学者对此进行了大量的研究予以证实。目前皮纹学的研究主要集中于掌纹，并且比较详细，半个多世纪来的学术探讨，已经使得掌纹研究从基础形态走向了临床实践。经查阅大量文献资料，在这里展示个别遗传疾病和慢性疾病患者掌纹异变与正常人掌纹异变的对比。</p>
 				</div>
-			</div>
-			<div class="row" id="team" style="display: None">
-				<div id="a1" style="height:400px;">
-					<h2 class="to-animate text-center">理论依据</h2>
-					<div class="to-animate" id="pic" style="height: 100%"> </div>
+				</div>
+				<div class="col-md-12 to-animate row" name="chart" id="team"  > 
+					<div id="pic" style="left: 2%; width:100%; height: 450%;"> </div> </div>
+					<p class="col-md-12 to-animate text-center" style="color:#666;">病理纹在某些慢性病或遗传病中的奇异性</p>
 					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
 					       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
@@ -354,7 +359,7 @@
 					var myChart = echarts.init(dom);
 					var app = {};
 					option = null;
-					app.title = '正负条形图';
+					app.title = '病理纹在某种疾病中的奇异性';
 
 					option = {
 					    tooltip : {
@@ -419,12 +424,21 @@
 					if (option && typeof option === "object") {
 					    myChart.setOption(option, true);
 					}
-					       </script>
-
-					<p><a class="btn" rel="external nofollow" onclick="javascript:cc('a1');return false;">收起全文</a></p>
+					</script>	
+				<div lass="row">
+					<div lass="col-md-8 to-animate" id="note1" style="display: none; font-size: 14px;">
+						<p>《170例食道癌皮纹特征》生物学教研室 胡玉莲 孙素馨 张业珠 南京医学院报第3期
+						</p>
+						<p>《43例弱智儿童皮纹观察初步报告》 罗源县卫生防疫站 林 旭 福建医药杂志1996年第18卷第3期</p>
+						<p>《食管癌和责门癌病人的皮纹学研究》河南省肿瘤研完所 祁岩超 祝斐明 买 玲 王 艳 笃 铭 实用肿瘤杂志1990年 第5卷 第2期</p>
+						<p>《精神分裂症800例掌纹检查报告》哈尔滨市第一专科医院 于彦文 吴铮碗 魏树森</p>
+						<p>《冠心病患者手部皮纹学特征分析》宋晓霞 余 冰 彭 亮 霍正浩 党 洁 陆 宏 宁夏医科大学学报 第 36 卷 10 期 2014 年 10 月</p>
+						<p>《先天性唇愕裂患者的手纹分析》 佳木斯医学院 附属口腔医院 祁佐良 宋宪民 李二格 富建明带</p>
+					</div>
+			   </div>
+				<p class="col-md-12 to-animate text-center" ><a class="btn" rel="external nofollow" onclick="javascript:cc('note1');return false;">查看/收起 数据来源</a></p>
 					
-				</div>
-					
+			</div>
 			</div>
 		</div>	
 	</div>
