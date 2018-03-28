@@ -862,8 +862,7 @@ header, .context-menu, .megamenu-content, footer{
 <div align="center"><img src="readme_static/feature.jpg" width = "600" height = "500" alt="图片名称" align=center /></div><br/>
 具体操作步骤包括： <br/></p><blockquote><p><strong>Blur&amp;Threshold--通过模糊和二值化来预处理。</strong>  经过多次实验，我们最终是通过<code>cv2.blur</code>函数进行<code>kernel=1</code>的模糊， 通过<code>cv2.threshold</code>函数进行<code>threshold=88</code>的二值化<br/></p></blockquote><blockquote><p><strong>FeatureExtract特征检测。</strong>  对于不同的线有不同的特征提取方法，这也是我们要做开源的原因。对于7线来说，我们先通过<code>cv2.canny(10,100)</code>函数来进行边缘检测，然后通过<code>cv2.HoughLines</code>函数通过统计投票的方式来检测直线。由于我们想要的是只是判断纵向线是否存在，所以在排名靠前的若干直线中，要筛选角度满足一定条件的。如果筛选出则认为7线存在。然后以python字典的方式输出结果给下一环节。</p></blockquote><h4><a name='header-n52' class='md-header-anchor '></a>Generate Report</h4><p>这一环节汇总上一环节给出的字典，基于已有的数据库和神经网络，将已存在的特征匹配的数据内容打印成报告。同时将原图像与处理后的roi部分拼接起来供用户查阅。 <br/></p><p>效果图如下所示 <br/>
 <div align="center">
-<img src="readme_static/hand-1.jpg" width = "400" height = "500" alt="图片名称" align=center />
-<img src="readme_static/report.jpg" width = "400" height = "500" alt="图片名称" align=center /> <br/>
+<img src="readme_static/report.jpeg" width = "500" height = "1500" alt="图片名称" align=center /> <br/>
 </div></p><h4><a name='header-n61' class='md-header-anchor '></a>Database&amp;Neural Network</h4><p>数据库中存放的数据来自于根据手诊书籍或者论文。神经网络中的数据来自于用户提供的数据与标签。 <br/>
 数据库选用轻量级的sqlite <br/>
 我们提供两种模式，大众模式和专家模式。大众模式下人们只能够查看诊断结果不能够对神经网络做出修改，专家模式下用户可以提供数据与标签用于数据训练。 <br/></p><p>&nbsp;</p></div>
